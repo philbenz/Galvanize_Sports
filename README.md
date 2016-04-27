@@ -7,7 +7,7 @@ Galvanize Sports is a small but growing online retailer. Their senior developer 
 For example, if a user calls `addItem(1, 1);`, the data should go from:
 
 ```js
-{
+inventory: {
     /* ... */
     id: 1,
     name: "Baseball Bat",
@@ -15,7 +15,7 @@ For example, if a user calls `addItem(1, 1);`, the data should go from:
     quantityAvailable: 3
     /* ... */
 }
-{
+shoppingCart: {
     /* ... */
     itemId: 1,
     quantity: 0
@@ -26,7 +26,7 @@ For example, if a user calls `addItem(1, 1);`, the data should go from:
 to:
 
 ```js
-{
+inventory: {
     /* ... */
     id: 1,
     name: "Baseball Bat",
@@ -34,7 +34,7 @@ to:
     quantityAvailable: 2
     /* ... */
 }
-{
+shoppingCart: {
     /* ... */
     itemId: 1,
     quantity: 1
@@ -46,81 +46,28 @@ If there the user adds more items than are available, you should add as many as 
 
 Additionally, calling `getCheckoutTotal()` should return the value of all of the items in the shopping cart, with a 7.8% tax, rounded to the nearest penny.
 
+## Getting Started
 
-## Function Stubs
+* `npm install` to install the testing dependencies
+* `npm test` to start a test runner that will automatically update when you save files (press `CTRL + C` to quit)
+* The only file you should edit is `galvanize_sports.js`. You should refer to `objects.js` to understand the format of the data.
+* The inventory is available as `this.inventory`, and the shopping cart is available as `this.shoppingCart` in the object in `galvanize_sports.js`
+* You are done when all of the assertions in `test/test.js` pass
 
-```js
-addItem(itemId, quantity){
-    /* Your code here- Look out for adding more items than are in inventory!
+## Hints
 
-    */
-    return true;
-}
-removeItem(itemId, quantity){
-    /* Your code here- Look out for removing more items than are in the cart!
+* You can add more functions than just the ones that have been stubbed out
+* `this` refers to the base object, and is how you can refer to other properties and methods on the object in `galvanize_sports`
+* To do math with decimals in JavaScript, you need to convert to whole numbers, do the calculation, and then convert back to decimals again
+* You can round numbers with the built-in `Math` object
+* Some solutions are more clever or efficient than others, but any solution that makes the tests pass is acceptable
+* You will likely have to use a combination of bracket and dot-notation to access the nested properties
 
-    */
-    return true;
-}
-getCheckoutTotal(){
-    var checkoutTotal = 0.00;
-    /* Your code here
+## Interactivity
 
-    */
-    return checkOutTotal;
-}
-getCheckoutSubtotal(){
-    var checkoutSubtotal = 0.00;
-    /* Your code here
-
-    */
-    return checkOutSubtotal;
-}
-getTax(subtotal, rate){
-    var taxAmount = 0.00;
-    /* Your code here
-
-    */
-    return taxAmount;
-}
-```
-
-## Data
-
-```js
-// Inventory
-{
-    inventory: [{
-        id: 1,
-        name: "Baseball Bat",
-        price: 19.99,
-        quantityAvailable: 3
-    },{
-        id: 2,
-        name: "Tennis Racket",
-        price: 50.00,
-        quantityAvailable: 5
-    },{
-        id: 3,
-        name: "Running Shoes",
-        price: 79.99,
-        quantityAvailable: 7
-    }]
-}
-```
-
-```js
-// Shopping Cart
-{
-    shoppingCart: [{
-        itemId: 1,
-        quantity: 0
-    },{
-        itemId: 2,
-        quantity: 0
-    },{
-        itemId: 3,
-        quantity: 0
-    }]
-}
-```
+* You can run your application interactively by running:
+    * `node`
+    * `.load interactive.js`
+    * `galvanizeSports.addItem(1, 1);`
+    * `galvanizeSports.getCheckoutTotal();`
+* Enjoy!
