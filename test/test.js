@@ -34,20 +34,20 @@ describe("Functions should work", function() {
         initializeData();
 
         galvanizeSports.removeItem(10, 1);
-        assert.equal(galvanizeSports.shoppingCart[0].quantity, 1, "Item 1 should be added to the shopping cart");
-        assert.equal(galvanizeSports.inventory[0].quantityAvailable, 4, "Item 1 should be removed from the available inventory");
+        assert.equal(galvanizeSports.shoppingCart[0].quantity, 1, "Item 1 should be removed from the shopping cart");
+        assert.equal(galvanizeSports.inventory[0].quantityAvailable, 4, "Item 1 should be added to the available inventory");
 
         galvanizeSports.removeItem(15, 1);
-        assert.equal(galvanizeSports.shoppingCart[1].quantity, 1, "Items 2 should be added to the shopping cart");
-        assert.equal(galvanizeSports.inventory[1].quantityAvailable, 6, "Item 2 should be removed from the available inventory");
+        assert.equal(galvanizeSports.shoppingCart[1].quantity, 1, "Items 2 should be removed from the shopping cart");
+        assert.equal(galvanizeSports.inventory[1].quantityAvailable, 6, "Item 2 should be added to the available inventory");
 
         galvanizeSports.removeItem(18, 1);
-        assert.equal(galvanizeSports.shoppingCart[2].quantity, 1, "Items 3 should be added to the shopping cart");
-        assert.equal(galvanizeSports.inventory[2].quantityAvailable, 8, "Item 3 should be removed from the available inventory");
+        assert.equal(galvanizeSports.shoppingCart[2].quantity, 1, "Items 3 should be removed from the shopping cart");
+        assert.equal(galvanizeSports.inventory[2].quantityAvailable, 8, "Item 3 should be added to the available inventory");
 
         galvanizeSports.removeItem(10, 50);
-        assert.equal(galvanizeSports.shoppingCart[0].quantity, 0, "All available item 1's should be added to the shopping cart");
-        assert.equal(galvanizeSports.inventory[0].quantityAvailable, 5, "All available item 1's should be removed from the available inventory");
+        assert.equal(galvanizeSports.shoppingCart[0].quantity, 0, "All available item 1's should be removed from the shopping cart");
+        assert.equal(galvanizeSports.inventory[0].quantityAvailable, 5, "All available item 1's should be added to the available inventory");
     });
     it("should have a working getCheckoutSubtotal function", function(){
         initializeData();

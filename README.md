@@ -42,7 +42,7 @@ shoppingCart: {
 }
 ```
 
-If there the user adds more items than are available, you should add as many as you can. If the user tries to remove more items than are in the cart, you should remove as many as you can.
+If they're the user adds more items than are available, you should add as many as you can. If the user tries to remove more items than are in the cart, you should remove as many as you can.
 
 Additionally, calling `getCheckoutTotal()` should return the value of all of the items in the shopping cart, with a 7.8% tax, rounded to the nearest penny.
 
