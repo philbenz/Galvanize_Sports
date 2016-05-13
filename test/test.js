@@ -60,16 +60,16 @@ describe("Functions should work", function() {
       assert.equal(galvanizeSports.getCheckoutSubtotal(), 299.96, "Calculates correct subtotal");
     });
   });
-  describe("#getCheckoutTotal", function () {
-    xit("should have a working getCheckoutTotal function", function(){
-      initializeData();
-      assert.equal(galvanizeSports.getCheckoutTotal(), 323.36, "Calculates correct total");
-    });
-  })
   describe("#getTax", function () {
     xit("should calculate tax", function(){
       initializeData();
       assert.equal(galvanizeSports.getTax(300, 0.078), 23.40, "Calculates correct tax");
+    });
+  })
+  describe("#getCheckoutTotal", function () {
+    xit("should have a working getCheckoutTotal function", function(){
+      initializeData();
+      assert.equal(galvanizeSports.getCheckoutTotal(), 323.36, "Calculates correct total");
     });
   })
 });
