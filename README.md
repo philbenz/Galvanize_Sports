@@ -50,6 +50,11 @@ Additionally, calling `getCheckoutTotal()` should return the value of all of the
 
 * `npm install` to install the testing dependencies
 * `npm test` to start a test runner that will automatically update when you save files (press `CTRL + C` to quit)
+* You should work through each test one at a time. Once a single test is passing,
+you should `git status`, `git add`, and `git commit` before moving on to the next
+test.
+* To move on to the next test, remove the `x` from the following `xit` statment
+in `test/test.js`
 * The only file you should edit is `galvanize_sports.js`. You should refer to `objects.js` to understand the format of the data.
 * The inventory is available as `this.inventory`, and the shopping cart is available as `this.shoppingCart` in the object in `galvanize_sports.js`
 * You are done when all of the assertions in `test/test.js` pass
