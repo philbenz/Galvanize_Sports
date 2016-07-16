@@ -48,7 +48,7 @@ module.exports = {
     },
     getCheckoutSubtotal: function(){
         var checkoutSubtotal = 0.00;
-        // Your code here!
+
         for (var i = 0; i < shoppingCart.length; i++){
             var cost = inventory[i].price * shoppingCart[i].quantity;
 
@@ -67,16 +67,10 @@ module.exports = {
     getCheckoutTotal: function(){
         var TAX_RATE = 0.078;
         var checkoutTotal = 0.00;
-        var checkoutSubtotal = 0.00;
 
-        for (var i = 0; i < shoppingCart.length; i++){
-            var cost = inventory[i].price * shoppingCart[i].quantity;
 
-            checkoutSubtotal += cost;
-        }
-
-        //calculate the total costs
-        checkoutTotal = (checkoutSubtotal * TAX_RATE + checkoutSubtotal);
+        //2 'for' loops - has some smell
+        checkoutTotal =  this.getTax(this.getCheckoutSubtotal(), TAX_RATE) + this.getCheckoutSubtotal();
 
         //reduce decimals
         checkoutTotal = checkoutTotal.toFixed(2);
